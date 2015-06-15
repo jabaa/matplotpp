@@ -49,7 +49,15 @@ void DISPLAY(){
 }mp;
 void display(){mp.display(); }
 void reshape(int w,int h){ mp.reshape(w,h); }
-void idle( void ){ glutPostRedisplay(); usleep(10000);}
+void idle( void ){
+	glutPostRedisplay();
+#ifdef LINUX
+    usleep(10000);
+#endif
+#ifdef WINDOWS
+    Sleep(10);
+#endif
+}
 void mouse(int button, int state, int x, int y ){ mp.mouse(button,state,x,y); }
 void motion(int x, int y ){mp.motion(x,y); }
 void passive(int x, int y ){mp.passivemotion(x,y); }

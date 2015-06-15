@@ -44,7 +44,12 @@ void idle( void ){
     if(is_run){ t+=0.02; } 
 
     glutPostRedisplay(); 
+#ifdef LINUX
     usleep(10000);
+#endif
+#ifdef WINDOWS
+    Sleep(10);
+#endif
 }
 void mouse(int button, int state, int x, int y ){ mp.mouse(button,state,x,y); }
 void motion(int x, int y ){mp.motion(x,y); }

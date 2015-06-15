@@ -15,7 +15,7 @@ Version:0.3.13
 #include <math.h>
 #include <time.h>
 #include "gl2ps.h"
-
+using namespace std;
 #define PI 3.14159265358979323846264
 
 typedef vector<double> dvec;
